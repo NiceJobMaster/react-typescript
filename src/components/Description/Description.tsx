@@ -10,7 +10,7 @@ interface State {
 }
 
 export default class Description extends React.Component<Props, State> {
-  public static defaultProps: Partial<Props> = {
+  public static defaultProps: Props = {
     countBy: 1,
   };
 

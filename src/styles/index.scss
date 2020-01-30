@@ -1,0 +1,42 @@
+@import './colors.scss';
+@import './typography.scss';
+@import './constants.scss';
+@import './screenSize.scss';
+@import './reset.scss';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font;
+  color: $charcoal;
+  outline: none;
+  scrollbar-width: thin;
+
+  * {
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    outline: none;
+
+    &:focus,
+    &:active,
+    &:hover {
+      outline: none;
+    }
+  }
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+blockquote {
+  margin-left: 82px;
+  margin-right: 0;
+}
+
+code {
+  font-family: $codeFont;
+}
+
+button {
+  font-family: $font;
+}

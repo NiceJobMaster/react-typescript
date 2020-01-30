@@ -1,0 +1,64 @@
+@import './colors.scss';
+@import './constants.scss';
+@import './screenSize.scss';
+
+@mixin base-settings-text($font-size, $font-weight) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
+.fontBold20 {
+  @include base-settings-text($size-20, $font-weight-500);
+}
+
+.font20 {
+  @include base-settings-text($size-20, $font-weight-300);
+}
+
+.font18 {
+  @include base-settings-text($size-18, $font-weight-300);
+}
+
+.font16 {
+  @include base-settings-text($size-16, $font-weight-300);
+}
+
+.fontBold16 {
+  @include base-settings-text($size-16, $font-weight-500);
+}
+
+.font14 {
+  @include base-settings-text($size-14, $font-weight-300);
+}
+
+.fontBold14 {
+  @include base-settings-text($size-14, $font-weight-500);
+}
+
+.ph {
+  @include base-settings-text($size-16, $font-weight-300);
+  color: $faded-pink;
+}
+
+.btn {
+  @include base-settings-text($size-16, $font-weight-500);
+  color: $slate-grey;
+}
+
+.quote,
+blockquote {
+  @include base-settings-text($size-24, $font-weight-400);
+  color: $greyish-teal;
+  font-style: italic;
+}
+
+a {
+  color: $slate-grey;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $charcoal;
+    text-decoration: none;
+  }
+}
