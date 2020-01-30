@@ -3,13 +3,21 @@
 .wrapper {
   background-color: $gray;
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 8px 20px;
 }
 
 .container {
   display: flex;
-  align-items: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+.logoTitle {
+  display: flex;
+  align-items: center;
 }
 
 .title {
@@ -18,6 +26,10 @@
 
 .logo {
   height: 34px;
+}
+
+.links {
+  display: flex;
 }
 
 .link {
