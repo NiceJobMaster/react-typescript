@@ -1,5 +1,7 @@
 import React from 'react';
 import style from './CreateTodo.module.scss';
+import { TodoApi } from '../../api';
+import { TodoData } from '../../types/types';
 
 interface State {
   todoDescription: string;
@@ -41,6 +43,15 @@ export default class CreateTodo extends React.Component<{}, State> {
     console.log(`Todo Description: ${this.state.todoDescription}`);
     console.log(`Todo Responsible: ${this.state.todoResponsible}`);
     console.log(`Todo Priority: ${this.state.todoPriority}`);
+
+    const todoData: TodoData = {
+      description: this.state.todoDescription,
+      responsible: this.state.todoResponsible,
+      priority: this.state.todoPriority,
+      completed: this.state.todoCompleted,
+    };
+
+    TodoApi.createTodo(todoData).then(res => console.log(res));
 
     this.setState({
       todoDescription: '',
