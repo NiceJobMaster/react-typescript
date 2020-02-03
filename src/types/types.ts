@@ -4,3 +4,7 @@ export interface TodoData {
   priority: string;
   completed: boolean;
 }
+
+export interface TodoType extends TodoData {
+  id: number;
+}

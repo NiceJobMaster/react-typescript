@@ -11,7 +11,7 @@ interface State {
 }
 
 export default class CreateTodo extends React.Component<{}, State> {
-  public state: State = {
+  state: State = {
     todoDescription: '',
     todoResponsible: '',
     todoPriority: '',
@@ -39,11 +39,6 @@ export default class CreateTodo extends React.Component<{}, State> {
   onSubmit = (e: React.FormEvent): void => {
     e.preventDefault();
 
-    console.log(`Form submitted`);
-    console.log(`Todo Description: ${this.state.todoDescription}`);
-    console.log(`Todo Responsible: ${this.state.todoResponsible}`);
-    console.log(`Todo Priority: ${this.state.todoPriority}`);
-
     const todoData: TodoData = {
       description: this.state.todoDescription,
       responsible: this.state.todoResponsible,
@@ -51,7 +46,9 @@ export default class CreateTodo extends React.Component<{}, State> {
       completed: this.state.todoCompleted,
     };
 
-    TodoApi.createTodo(todoData).then(res => console.log(res));
+    TodoApi.addTodo(todoData)
+      .then(res => console.log(res))
+      .catch(error => console.log(error));
 
     this.setState({
       todoDescription: '',

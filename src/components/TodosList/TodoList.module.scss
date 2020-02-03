@@ -1,0 +1,34 @@
+@import '../../styles/index.scss';
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+}
+
+.title {
+  @extend .fontBold20;
+  padding: 20px 0;
+}
+
+.table {
+  width: 100%;
+
+  td,
+  th {
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+    padding: 8px;
+    text-align: left;
+  }
+
+  tr:nth-child(even) {
+    background-color: $gray;
+  }
+}
