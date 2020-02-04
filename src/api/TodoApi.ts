@@ -13,4 +13,12 @@ const addTodo = (data: TodoData): Promise<AxiosResponse> => {
   return axios.post(configApi.URL + 'todo', data);
 };
 
-export default { getTodos, addTodo };
+const getTodo = (id: string): Promise<AxiosResponse> => {
+  return axios.get(configApi.URL + 'todo/' + id);
+};
+
+const editTodo = (id: string, data: TodoData): Promise<AxiosResponse> => {
+  return axios.put(configApi.URL + 'todo/' + id, data);
+};
+
+export default { getTodos, addTodo, getTodo, editTodo };
