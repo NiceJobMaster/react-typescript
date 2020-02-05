@@ -3,6 +3,7 @@ import { TodoData, TodoType } from '../../types/types';
 import { TodoApi } from '../../api';
 import { RouteComponentProps } from 'react-router-dom';
 import { AxiosResponse } from 'axios';
+import style from './EditTodo.module.scss';
 
 export default class EditTodo extends React.Component<
   RouteComponentProps<{ id: string }>,
@@ -59,27 +60,29 @@ export default class EditTodo extends React.Component<
 
   render(): JSX.Element {
     return (
-      <div>
-        <div>
-          <h3>Update Todo</h3>
-          <form onSubmit={this.onSubmit}>
-            <div>
-              <label>Description: </label>
+      <div className={style.wrapper}>
+        <div className={style.container}>
+          <h3 className={style.title}>Update Todo</h3>
+          <form className={style.form} onSubmit={this.onSubmit}>
+            <div className={style.inputWrapper}>
+              <label className={style.label}>Description: </label>
               <input
+                className={style.input}
                 type="text"
                 value={this.state.description}
                 onChange={this.onChangeTodoDescription}
               />
             </div>
-            <div>
-              <label>Responsible: </label>
+            <div className={style.inputWrapper}>
+              <label className={style.label}>Responsible: </label>
               <input
+                className={style.input}
                 type="text"
                 value={this.state.responsible}
                 onChange={this.onChangeTodoResponsible}
               />
             </div>
-            <div>
+            <div className={style.radioWrapper}>
               <div>
                 <input
                   type="radio"
@@ -89,7 +92,7 @@ export default class EditTodo extends React.Component<
                   checked={this.state.priority === 'Low'}
                   onChange={this.onChangeTodoPriority}
                 />
-                <label>Low</label>
+                <label className={style.radioLabel}>Low</label>
               </div>
               <div>
                 <input
@@ -100,7 +103,7 @@ export default class EditTodo extends React.Component<
                   checked={this.state.priority === 'Medium'}
                   onChange={this.onChangeTodoPriority}
                 />
-                <label>Medium</label>
+                <label className={style.radioLabel}>Medium</label>
               </div>
               <div>
                 <input
@@ -111,24 +114,28 @@ export default class EditTodo extends React.Component<
                   checked={this.state.priority === 'High'}
                   onChange={this.onChangeTodoPriority}
                 />
-                <label>High</label>
+                <label className={style.radioLabel}>High</label>
               </div>
             </div>
-            <div>
-              <input
-                id="completedCheckbox"
-                type="checkbox"
-                name="completedCheckbox"
-                onChange={this.onChangeTodoCompleted}
-                checked={this.state.completed}
-              />
-              <label htmlFor="completedCheckbox">Completed</label>
+            <div className={style.radioWrapper}>
+              <div>
+                <input
+                  id="completedCheckbox"
+                  type="checkbox"
+                  name="completedCheckbox"
+                  onChange={this.onChangeTodoCompleted}
+                  checked={this.state.completed}
+                />
+                <label className={style.radioLabel} htmlFor="completedCheckbox">
+                  Completed
+                </label>
+              </div>
             </div>
 
             <br />
 
-            <div>
-              <input type="submit" value="Update Todo" />
+            <div className={style.buttonWrapper}>
+              <input className={style.button} type="submit" value="Update Todo" />
             </div>
           </form>
         </div>
